@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akinsmedia - Where Fashion Meets Artistry | Premier Fashion & Creative Design Studio in Victoria Island, Lagos</title>
+    <meta name="description" content="Akinsmedia is a leading fashion and creative design house in Victoria Island, Lagos. Custom fashion design, bridal wear, styling, and creative solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #13081c;
+            --color-accent: #ae499d;
+            --color-bg: #F8F4FA;
+            --color-text: #180A22;
+            --color-surface: #381045;
+            --color-secondary-accent: #c79885;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Nunito Sans', sans-serif;
+            --border-radius: 16px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 244, 250, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(19, 8, 28, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 300;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--color-secondary-accent);
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(174, 73, 157, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--color-surface);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(174, 73, 157, 0.4);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(19, 8, 28, 0.15);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        #services {
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(19, 8, 28, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(174, 73, 157, 0.2);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-primary) 100%);
+            color: white;
+            text-align: center;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        #contact .section-title {
+            color: white;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-secondary-accent);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-secondary-accent);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: var(--color-secondary-accent);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float::before {
+            content: "💬";
+            font-size: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            section {
+                padding: 48px 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float::before {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">Akinsmedia</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <img src="https://images.pexels.com/photos/28988327/pexels-photo-28988327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Akinsmedia Fashion Design Studio" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Akinsmedia</h1>
+            <div class="hero-tagline">Where Fashion Meets Artistry</div>
+            <p>Welcome to Akinsmedia - Your Premier Destination for Fashion and Creative Design Excellence in Lagos. We transform visions into stunning reality through bespoke fashion design, creative styling, and innovative design solutions that celebrate your unique identity.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Akinsmedia</h2>
+            <div class="about-content">
+                <img src="https://images.pexels.com/photos/28988327/pexels-photo-28988327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Akinsmedia Creative Studio" class="about-image">
+                <div class="about-text">
+                    <p>Akinsmedia is a leading fashion and creative design house located in the heart of Victoria Island, Lagos. We specialize in creating exceptional fashion pieces and providing comprehensive creative design services that blend contemporary aesthetics with timeless elegance. Our team of skilled designers and artisans is dedicated to bringing your fashion dreams to life, whether you're looking for custom couture, ready-to-wear collections, or complete brand styling solutions.</p>
+                    <p>At Akinsmedia, we believe that fashion is more than clothing—it's an expression of identity, culture, and confidence. From concept to creation, we work closely with each client to deliver designs that are as unique as they are unforgettable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Fashion Design</h3>
+                    <p>Bespoke clothing tailored to your exact measurements and style preferences, from elegant evening wear to sophisticated business attire.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Bridal & Special Occasion</h3>
+                    <p>Stunning wedding gowns, aso-ebi coordination, and complete special event styling that makes your celebration unforgettable.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Ready-to-Wear Collections</h3>
+                    <p>Curated fashion pieces that combine quality craftsmanship with contemporary Nigerian and international trends.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Creative Styling & Consulting</h3>
+                    <p>Professional styling services for personal wardrobes, photoshoots, events, and brand campaigns.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fashion Illustration & Design Development</h3>
+                    <p>Bringing your ideas to life through detailed sketches and technical designs.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Alterations & Repairs</h3>
+                    <p>Expert garment modifications and restoration services to keep your wardrobe in perfect condition.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Brand Identity & Creative Direction</h3>
+                    <p>Complete creative design solutions for fashion brands, including logo design, lookbooks, and brand storytelling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Our Studio</h2>
+            <div class="contact-content">
+                <p>Ready to create something extraordinary? Visit us at our Victoria Island studio or get in touch to discuss your fashion and creative design needs. Our team at Akinsmedia is here to bring your vision to life with exceptional craftsmanship and personalized service.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <strong>Studio Location</strong>
+                        <p>Plot 1227 Bishop Oluwole Street, Victoria Island, Lagos</p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone</strong>
+                        <p><a href="tel:+2348163106110">+234 816 310 6110</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <p><a href="mailto:info@akinsmedia.com">info@akinsmedia.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-buttons">
+                    <a href="tel:+2348163106110" class="contact-btn">Call Us</a>
+                    <a href="mailto:info@akinsmedia.com" class="contact-btn">Send Email</a>
+                    <a href="https://wa.me/2348163106110" class="contact-btn whatsapp-btn" target="_blank">WhatsApp</a>
+                </div>
+                <p style="margin-top: 2rem;">For consultations, fittings, or inquiries, reach out today. We look forward to working with you to create fashion that tells your unique story.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Akinsmedia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2348163106110" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"></a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
