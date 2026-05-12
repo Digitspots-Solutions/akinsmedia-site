@@ -1,0 +1,42 @@
+{
+  "businessName": "Akinsmedia",
+  "industry": "Fashion and Creative Design",
+  "tone": "creative and sophisticated",
+  "tagline": "Where Fashion Meets Artistry",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to Akinsmedia - Your Premier Destination for Fashion and Creative Design Excellence in Lagos. We transform visions into stunning reality through bespoke fashion design, creative styling, and innovative design solutions that celebrate your unique identity.",
+      "imagePrompt": "Photorealistic image of an elegant Nigerian fashion design studio in Victoria Island Lagos, featuring luxurious fabrics draped artistically, modern cutting tables with precision tools, mood boards with vibrant African prints and contemporary fashion sketches, soft natural lighting streaming through tall windows, professional atmosphere with creative touches, high-end interior design, shallow depth of field",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Akinsmedia",
+      "copy": "Akinsmedia is a leading fashion and creative design house located in the heart of Victoria Island, Lagos. We specialize in creating exceptional fashion pieces and providing comprehensive creative design services that blend contemporary aesthetics with timeless elegance. Our team of skilled designers and artisans is dedicated to bringing your fashion dreams to life, whether you're looking for custom couture, ready-to-wear collections, or complete brand styling solutions. At Akinsmedia, we believe that fashion is more than clothing—it's an expression of identity, culture, and confidence. From concept to creation, we work closely with each client to deliver designs that are as unique as they are unforgettable.",
+      "imagePrompt": "Photorealistic image of talented Nigerian fashion designers at work in a bright modern studio, measuring fabric on a dress form, colorful thread spools and design tools organized neatly, fashion illustrations pinned on walls, diverse team collaborating over design sketches, warm professional lighting, creative workspace with plants and inspiration boards, authentic Lagos creative studio atmosphere",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "Custom Fashion Design: Bespoke clothing tailored to your exact measurements and style preferences, from elegant evening wear to sophisticated business attire.\n\nBridal & Special Occasion: Stunning wedding gowns, aso-ebi coordination, and complete special event styling that makes your celebration unforgettable.\n\nReady-to-Wear Collections: Curated fashion pieces that combine quality craftsmanship with contemporary Nigerian and international trends.\n\nCreative Styling & Consulting: Professional styling services for personal wardrobes, photoshoots, events, and brand campaigns.\n\nFashion Illustration & Design Development: Bringing your ideas to life through detailed sketches and technical designs.\n\nAlterations & Repairs: Expert garment modifications and restoration services to keep your wardrobe in perfect condition.\n\nBrand Identity & Creative Direction: Complete creative design solutions for fashion brands, including logo design, lookbooks, and brand storytelling.",
+      "imagePrompt": "Photorealistic grid collage showing various fashion and creative services: elegant Nigerian bride in custom wedding gown, professional photoshoot styling session, designer sketching fashion illustrations, tailor making precise alterations, vibrant ready-to-wear clothing display, brand identity materials with fashion lookbook, all set in upscale Lagos creative environment, professional photography quality",
+      "layout": "grid"
+    },
+    {
+      "id": "contact",
+      "name": "Visit Our Studio",
+      "copy": "Ready to create something extraordinary? Visit us at our Victoria Island studio or get in touch to discuss your fashion and creative design needs. Our team at Akinsmedia is here to bring your vision to life with exceptional craftsmanship and personalized service.\n\nStudio Location: Plot 1227 Bishop Oluwole Street, Victoria Island, Lagos\n\nFor consultations, fittings, or inquiries, reach out today. We look forward to working with you to create fashion that tells your unique story.",
+      "imagePrompt": "Photorealistic image of an inviting fashion studio entrance in Victoria Island Lagos, modern glass doors with elegant signage, well-lit reception area visible inside with comfortable seating, fashion magazines on coffee table, fresh flowers, professional yet welcoming atmosphere, daytime lighting, upscale Nigerian business district setting, visible street address number",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "+234 816 310 6110",
+    "email": "info@akinsmedia.com",
+    "address": "Plot 1227 Bishop Oluwole Street, Victoria Island, Lagos",
+    "whatsapp": "https://wa.me/2348163106110"
+  }
+}
